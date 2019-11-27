@@ -1,0 +1,77 @@
+<html>
+    <body>
+        <script>
+            function computerPlay() {
+            let integer = Math.floor(Math.random() * (3) );
+            if (integer == 0) {
+            computerValue = "rock";}
+            else if (integer == 1) {
+            computerValue = "scissors";}
+            else {
+            computerValue = "paper";}
+            return computerValue;
+            }
+
+            function playerPlay() {
+            playerChoice = prompt("Please Enter Rock/Paper/Scissors");
+            playerCaseAdjust = playerChoice.toLowerCase();
+            return playerCaseAdjust;
+            }
+            
+            function playRound() {
+                computerPlay()
+                playerPlay()
+                if ((playerCaseAdjust == "rock")&&(computerValue == "rock")) {
+                    result = "It's a tie!";
+                    winner = "Tie";
+                }
+                else if ((playerCaseAdjust == "scissors")&&(computerValue == "scissors")) {
+                    result = "It's a tie!";
+                    winner = "Tie";
+                }
+                else if ((playerCaseAdjust == "paper")&&(computerValue == "paper")) {
+                    result = "It's a tie!";
+                    winner = "Tie";
+                }
+                else if ((playerCaseAdjust == "rock")&&(computerValue == "paper")) {
+                    result = "You lose! Paper beats rock";
+                    winner = "Computer";
+                }
+                else if ((playerCaseAdjust == "rock")&&(computerValue == "scissors")) {
+                    result = "You win! Rock beats scissors";
+                    winner = "Player";
+                }
+                else if ((playerCaseAdjust == "scissors")&&(computerValue == "paper")) {
+                    result = "You win! Scissors beats paper";
+                    winner = "Player";
+                }
+                else if ((playerCaseAdjust == "scissors")&&(computerValue == "rock")) {
+                    result = "You lose! Rock beats scissors";
+                    winner = "Computer";
+                }
+                else if ((playerCaseAdjust == "paper")&&(computerValue == "scissors")) {
+                    result = "You lose! Scissors beats paper";
+                    winner = "Computer";
+                }
+                else {
+                    result = "You win! Paper beats rock";
+                    winner = "Player";
+                }
+                console.log(result)
+                console.log("The winner is "+winner)
+            }
+
+           
+           function playGame() {
+            constant = 0;
+            while (constant < 5) {
+                constant++;
+                playRound();
+               }
+           }
+           
+           playGame();
+            
+        </script>
+    </body>
+</html>
